@@ -41,7 +41,6 @@ export class HttpService {
     defaultRequestInfo.headers.auth_token =
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTQ4NWZjZjBkNjcyZTAwMTdiYWY5Y2QiLCJlbWFpbCI6Im1heWFua2JhamFqbnNpdEBnbWFpbC5jb20iLCJpYXQiOjE1OTUxNTYyNjV9.g_bUiXMhMw-1dADJ3aOR4Hm5DplN1bes17bpnVjZrXA';
 
-    debugger
     return axios.request<T>({
       ...defaultRequestInfo,
       ...config,

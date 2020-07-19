@@ -19,13 +19,14 @@ interface GlobalUserDataProviderProps {
   children: ReactNode;
 }
 
-const UserDataContext = createContext<any>(undefined);
+const UserDataContext = createContext<UserData | undefined>(undefined);
 const UserDataActionsContext = createContext<UserDataActions | undefined>(undefined);
 
 export const GlobalUserDataProvider = ({ children }: GlobalUserDataProviderProps) => {
   const [userData, setUserData] = useState<UserData | null>(null);
 
   const updateUser = (userInput: UserData) => {
+    debugger
     setUserData(userInput);
   };
 
