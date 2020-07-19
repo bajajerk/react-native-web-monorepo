@@ -1,4 +1,4 @@
-package com.myprojectname;
+package com.zupazzo.i321193.breakupornot;
 
 import com.facebook.react.ReactActivity;
 

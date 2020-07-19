@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "694785323635",
+    "firebase_url": "https://breakup-help.firebaseio.com",
+    "project_id": "breakup-help",
+    "storage_bucket": "breakup-help.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694785323635:android:25793f565a0119cb0d3006",
+        "android_client_info": {
+          "package_name": "com.zupazzo.i321193.breakupornot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "694785323635-0ljuie0095vnvgladj29rn9763sp8g6g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zupazzo.i321193.breakupornot",
+            "certificate_hash": "4fbf231164d94cd7364cc59b749782c82dc0f483"
+          }
+        },
+        {
+          "client_id": "694785323635-p5kot1gclqg89kljalkdcc3735fvkev4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3PzJLzeo1BkbypQa2JhTFWKaScYZTrAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "694785323635-p5kot1gclqg89kljalkdcc3735fvkev4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
