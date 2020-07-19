@@ -5,12 +5,14 @@ interface UserDataActions {
   helloWord(): void;
 }
 
+// @TODO, take it from schema file while testing context
 export interface UserData {
   name: string;
   email: string;
   image_url: string;
   breakup_test_taken: boolean;
   challenge_day: number;
+  next_challenge_can_be_opened_on: number;
 }
 
 interface GlobalUserDataProviderProps {
