@@ -12,7 +12,7 @@ export function makeServices<T>(services: T): MakeServicesResponse<T> {
    * Eslint usually will block casting an Object Literal, we are disabling this
    * for the createContext call in the schematic.
    */
-  const ServicesContext = React.createContext({} as T);
+  const ServicesContext = React.createContext({} as T); // eslint-disable-line
 
   /**
    * Convenience component to provide services context.

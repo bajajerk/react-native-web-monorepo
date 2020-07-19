@@ -7,17 +7,25 @@ export const errorMessages = {
   failedToLogin: 'Failed to login',
 } as const;
 
-export class UserService {
+export class ForumService {
   constructor(private httpService: HttpService) {}
 
   async fetchPosts(currentPage: number): Promise<ForumPosts[]> {
     const url = `${apiUrl}/home/forum/${currentPage}`;
     try {
-      const { data } = await this.httpService.post<ForumPosts[]>(url);
-      return data;
+      const {
+        data: { questions },
+      } = await this.httpService.get<any>(url);
+      return questions;
     } catch (error) {
+      debugger
+      console.log(error)
       throw new Error(errorMessages.failedToLogin);
     }
+  }
+
+  testServvice(): string {
+    return 'Hello';
   }
 
   async postQuestion(question: CreateQuestion) {
