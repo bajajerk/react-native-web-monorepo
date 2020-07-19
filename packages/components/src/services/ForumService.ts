@@ -22,11 +22,18 @@ export class ForumService {
       throw new Error(errorMessages.failedToLogin);
     }
   }
-
-  testServvice(): string {
-    return 'Hello';
+  async fetchAnswers(questionId: string): Promise<ForumPosts[]> {
+    const url = `${apiUrl}/home/answers/${questionId}`;
+    try {
+      const {
+        data: { answers },
+      } = await this.httpService.get<any>(url);
+      return answers;
+    } catch (error) {
+      console.log(error);
+      throw new Error(errorMessages.failedToLogin);
+    }
   }
-
   async postQuestion(question: CreateQuestion) {
     const url = `${apiUrl}/questions`;
     try {
@@ -36,4 +43,13 @@ export class ForumService {
       throw new Error(errorMessages.failedToLogin);
     }
   }
+  // async postLike(questionId: string) {
+  //   const url = `${apiUrl}/questions`;
+  //   try {
+  //     const { data } = await this.httpService.post<any>(url, { data: question });
+  //     return data;
+  //   } catch (error) {
+  //     throw new Error(errorMessages.failedToLogin);
+  //   }
+  // }
 }
