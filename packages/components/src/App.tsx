@@ -25,7 +25,7 @@ export function App() {
             </View>
           )}
           <View style={styles.body}>
-            <Text >Hello</Text>
+            <Text>Hello No There</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
