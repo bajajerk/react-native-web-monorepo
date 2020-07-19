@@ -1,37 +1,7 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
 
-import { AppHeader } from './AppHeader'
-
-export function App() {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <AppHeader />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <Text>Hello No There</Text>
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+import { AppHeader } from './AppHeader';
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -72,4 +42,25 @@ const styles = StyleSheet.create({
   },
 });
 
-declare var global: any;
+declare let global: any;
+
+export function App() {
+  return (
+    <>
+      <StatusBar barStyle="dark-content" />
+      <SafeAreaView>
+        <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
+          <AppHeader />
+          {global.HermesInternal == null ? null : (
+            <View style={styles.engine}>
+              <Text style={styles.footer}>Engine: Hermes</Text>
+            </View>
+          )}
+          <View style={styles.body}>
+            <Text>Hello</Text>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </>
+  );
+}
