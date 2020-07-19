@@ -1,7 +1,8 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
-
 import { AppHeader } from './AppHeader';
+import ForumScreen from './ForumScreen';
+import { ServicesProvider } from './services';
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -46,7 +47,7 @@ declare let global: any;
 
 export function App() {
   return (
-    <>
+    <ServicesProvider>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
@@ -57,10 +58,11 @@ export function App() {
             </View>
           )}
           <View style={styles.body}>
-            <Text>Hello</Text>
+            <ForumScreen />
+            <Text>Hello World</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
-    </>
+    </ServicesProvider>
   );
 }

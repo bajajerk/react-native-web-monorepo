@@ -18,8 +18,7 @@ export class ForumService {
       } = await this.httpService.get<any>(url);
       return questions;
     } catch (error) {
-      debugger
-      console.log(error)
+      console.log(error);
       throw new Error(errorMessages.failedToLogin);
     }
   }
