@@ -26,7 +26,6 @@ export const GlobalUserDataProvider = ({ children }: GlobalUserDataProviderProps
   const [userData, setUserData] = useState<UserData | null>(null);
 
   const updateUser = (userInput: UserData) => {
-    debugger
     setUserData(userInput);
   };
 
@@ -49,7 +48,13 @@ export const GlobalUserDataProvider = ({ children }: GlobalUserDataProviderProps
   }, [userData]);
 
   return (
-    <UserDataContext.Provider value={{ ...state }}>
+    //  TODO, remove this or make it nullable
+    <UserDataContext.Provider value={{ ...state,  name: 'Test',
+      email: '121',
+      image_url: 'string',
+      breakup_test_taken: true,
+      challenge_day: 1,
+      next_challenge_can_be_opened_on: 12}}>
       <UserDataActionsContext.Provider value={actions}>{children}</UserDataActionsContext.Provider>
     </UserDataContext.Provider>
   );
