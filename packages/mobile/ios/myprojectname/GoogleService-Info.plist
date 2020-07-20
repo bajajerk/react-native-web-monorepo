@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>694785323635-slpb80t6k39mumlmhaj9n58v36gldkiv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.694785323635-slpb80t6k39mumlmhaj9n58v36gldkiv</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>694785323635-7h7scl9vedhs9n55l6m2ckio8rrlnodu.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBvcnPY-bbKAFuzZ2Fo4D9-g2QsAP5jEAI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>694785323635</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.zupazzo.i321193.breakupornot.ios</string>
+	<key>PROJECT_ID</key>
+	<string>breakup-help</string>
+	<key>STORAGE_BUCKET</key>
+	<string>breakup-help.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:694785323635:ios:af6188f21eb8e6810d3006</string>
+	<key>DATABASE_URL</key>
+	<string>https://breakup-help.firebaseio.com</string>
+</dict>
+</plist>
