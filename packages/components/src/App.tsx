@@ -1,6 +1,9 @@
 import React from 'react';
+import { ServicesProvider } from './services';
 import { SafeAreaView, ScrollView, StatusBar, StyleSheet } from 'react-native';
-import { LoginPage } from './pages/LoginPage';
+import { LoginPage } from './pages/LoginPage/LoginPage';
+
+import { GlobalUserDataProvider } from './contexts';
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -10,13 +13,15 @@ const styles = StyleSheet.create({
 
 export const App: React.FC = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
-          <LoginPage />
-        </ScrollView>
-      </SafeAreaView>
-    </>
+    <GlobalUserDataProvider>
+      <ServicesProvider>
+        <StatusBar barStyle="dark-content" />
+        <SafeAreaView>
+          <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
+            <LoginPage />
+          </ScrollView>
+        </SafeAreaView>
+      </ServicesProvider>
+    </GlobalUserDataProvider>
   );
 };
