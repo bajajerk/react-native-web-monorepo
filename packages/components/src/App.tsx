@@ -4,6 +4,7 @@ import { SafeAreaView, ScrollView, StatusBar, StyleSheet } from 'react-native';
 import { LoginPage } from './pages/LoginPage';
 import ForumScreen from './ForumScreen';
 import { GlobalUserDataProvider } from './contexts';
+import { NavigationContainer } from '@react-navigation/native';
 
 const styles = StyleSheet.create({
   scrollView: {
