@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Text } from 'react-native';
-import { useServices } from './services';
-import { ForumPosts } from './schemas/Forum.schema';
+import { useServices } from '../services';
+import { ForumPosts } from '../schemas/Forum.schema';
 
-const ForumScreen: React.FC = () => {
+const ForumPage: React.FC = () => {
   const [posts, setPosts] = useState<ForumPosts[]>([]);
   const { forumService } = useServices();
 
@@ -19,4 +19,4 @@ const ForumScreen: React.FC = () => {
   return <Text> {posts.length} </Text>;
 };
 
-export default ForumScreen;
+export default ForumPage;

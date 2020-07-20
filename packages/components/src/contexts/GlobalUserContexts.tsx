@@ -2,7 +2,6 @@ import React, { useState, useMemo, useContext, ReactNode, createContext } from '
 
 interface UserDataActions {
   updateUser(userInput: UserData): void;
-  helloWord(): void;
 }
 
 // @TODO, take it from schema file while testing context
@@ -29,14 +28,10 @@ export const GlobalUserDataProvider = ({ children }: GlobalUserDataProviderProps
     setUserData(userInput);
   };
 
-  const helloWord = () => {
-    console.log('Hi Guys');
-  };
 
   const actions = useMemo(
     () => ({
       updateUser,
-      helloWord,
     }),
     [],
   );

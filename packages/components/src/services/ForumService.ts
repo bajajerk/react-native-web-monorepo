@@ -18,25 +18,25 @@ export class ForumService {
       } = await this.httpService.get<any>(url);
       return questions;
     } catch (error) {
-      console.log(error);
       throw new Error(errorMessages.failedToLogin);
     }
   }
   async fetchAnswers(questionId: string): Promise<ForumPosts[]> {
     const url = `${apiUrl}/home/answers/${questionId}`;
     try {
+      // TODO think for schema when consuming
       const {
         data: { answers },
       } = await this.httpService.get<any>(url);
       return answers;
     } catch (error) {
-      console.log(error);
       throw new Error(errorMessages.failedToLogin);
     }
   }
   async postQuestion(question: CreateQuestion) {
     const url = `${apiUrl}/questions`;
     try {
+      // TODO think for schema when consuming
       const { data } = await this.httpService.post<any>(url, { data: question });
       return data;
     } catch (error) {

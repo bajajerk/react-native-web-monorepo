@@ -1,4 +1,4 @@
-import { LocalStorage } from '../../localStorage';
+import { LocalStorageHelper} from '../../helper/LocalStorage';
 
 export class TokenService {
   static TOKEN_PARAM = 'token';
@@ -7,18 +7,18 @@ export class TokenService {
 
   async getToken(): Promise<string> {
     try {
-      const jwt = (await LocalStorage.getItem(this.tokenKey)) || '';
+      const jwt = (await LocalStorageHelper.getItem(this.tokenKey)) || '';
       return jwt;
     } catch (error) {
       return '';
     }
   }
 
-  async setToken(token: string): Promise<void> {
-    await LocalStorage.setItem(this.tokenKey, token);
+  async setToken(token: string) {
+    await LocalStorageHelper.setItem(this.tokenKey, token);
   }
 
-  async clearToken(): Promise<void> {
-    await LocalStorage.removeItem(this.tokenKey);
+  async clearToken(){
+    await LocalStorageHelper.removeItem(this.tokenKey);
   }
 }

@@ -19,6 +19,7 @@ export class UserService {
       },
     };
     try {
+      // TODO think for schema when consuming
       const { data } = await this.httpService.post<any>(url, config);
       return data;
     } catch (error) {

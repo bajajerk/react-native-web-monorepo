@@ -24,7 +24,7 @@ export interface ForumAnswer {
   _id: string;
   content: string;
   createdAt: Date;
-  hashTags: any[];
+  hashTags: string[];
   liked: boolean;
   likes: number;
   questionId: string;
