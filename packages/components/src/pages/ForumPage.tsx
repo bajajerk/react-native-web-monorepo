@@ -3,7 +3,7 @@ import { Text } from 'react-native';
 import { useServices } from '../services';
 import { ForumPosts } from '../schemas/Forum.schema';
 
-const ForumPage: React.FC = () => {
+export const ForumPage: React.FC = () => {
   const [posts, setPosts] = useState<ForumPosts[]>([]);
   const { forumService } = useServices();
 

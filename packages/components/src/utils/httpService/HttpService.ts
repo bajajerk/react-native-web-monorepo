@@ -5,6 +5,8 @@ export interface HandleStatusCode {
   [key: number]: (error: AxiosError) => void;
 }
 
+export const apiFailureErrorMessage = 'Failure in API call'
+
 export class HttpService {
   constructor(protected tokenService: TokenService) {}
 

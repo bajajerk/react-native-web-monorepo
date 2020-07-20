@@ -8,10 +8,10 @@ interface UserDataActions {
 export interface UserData {
   name: string;
   email: string;
-  image_url: string;
-  breakup_test_taken: boolean;
-  challenge_day: number;
-  next_challenge_can_be_opened_on: number;
+  imageUrl: string;
+  breakupTestTaken: boolean;
+  challengeDay: number;
+  nextChallengeCanBeOpenedOn: number;
 }
 
 interface GlobalUserDataProviderProps {
@@ -46,10 +46,10 @@ export const GlobalUserDataProvider = ({ children }: GlobalUserDataProviderProps
     //  TODO, remove this or make it nullable
     <UserDataContext.Provider value={{ ...state,  name: 'Test',
       email: '121',
-      image_url: 'string',
-      breakup_test_taken: true,
-      challenge_day: 1,
-      next_challenge_can_be_opened_on: 12}}>
+      imageUrl: 'string',
+      breakupTestTaken: true,
+      challengeDay: 1,
+      nextChallengeCanBeOpenedOn: 12}}>
       <UserDataActionsContext.Provider value={actions}>{children}</UserDataActionsContext.Provider>
     </UserDataContext.Provider>
   );

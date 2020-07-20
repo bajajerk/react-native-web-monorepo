@@ -2,7 +2,6 @@ import React from 'react';
 import { ServicesProvider } from './services';
 import { SafeAreaView, ScrollView, StatusBar, StyleSheet } from 'react-native';
 import { LoginPage } from './pages/LoginPage/LoginPage';
-import ForumPage from './pages/ForumPage';
 
 import { GlobalUserDataProvider } from './contexts';
 

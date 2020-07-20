@@ -1,16 +1,12 @@
-import { HttpService } from '../utils/httpService';
+import { HttpService, apiFailureErrorMessage } from '../utils/httpService';
 import { CreateQuestion, ForumPosts } from '../schemas/Forum.schema';
 
 const apiUrl = 'https://breakup-app-api.herokuapp.com/api';
 
-export const errorMessages = {
-  failedToLogin: 'Failed to login',
-} as const;
-
 export class ForumService {
   constructor(private httpService: HttpService) {}
 
-  async fetchPosts(currentPage: number): Promise<ForumPosts[]> {
+  async fetchPosts(currentPage: number) {
     const url = `${apiUrl}/home/forum/${currentPage}`;
     try {
       const {
@@ -18,10 +14,10 @@ export class ForumService {
       } = await this.httpService.get<any>(url);
       return questions;
     } catch (error) {
-      throw new Error(errorMessages.failedToLogin);
+      throw new Error(apiFailureErrorMessage);
     }
   }
-  async fetchAnswers(questionId: string): Promise<ForumPosts[]> {
+  async fetchAnswers(questionId: string) {
     const url = `${apiUrl}/home/answers/${questionId}`;
     try {
       // TODO think for schema when consuming
@@ -30,7 +26,7 @@ export class ForumService {
       } = await this.httpService.get<any>(url);
       return answers;
     } catch (error) {
-      throw new Error(errorMessages.failedToLogin);
+      throw new Error(apiFailureErrorMessage);
     }
   }
   async postQuestion(question: CreateQuestion) {
@@ -40,7 +36,7 @@ export class ForumService {
       const { data } = await this.httpService.post<any>(url, { data: question });
       return data;
     } catch (error) {
-      throw new Error(errorMessages.failedToLogin);
+      throw new Error(apiFailureErrorMessage);
     }
   }
   // async postLike(questionId: string) {

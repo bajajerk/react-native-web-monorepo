@@ -1,10 +1,6 @@
-import { HttpService } from '../utils/httpService';
+import {apiFailureErrorMessage, HttpService} from '../utils/httpService';
 
 const apiUrl = 'https://breakup-app-api.herokuapp.com/api';
-
-export const errorMessages = {
-  failedToLogin: 'Failed to login',
-} as const;
 
 export class UserService {
   constructor(private httpService: HttpService) {}
@@ -23,7 +19,7 @@ export class UserService {
       const { data } = await this.httpService.post<any>(url, config);
       return data;
     } catch (error) {
-      throw new Error(errorMessages.failedToLogin);
+      throw new Error(apiFailureErrorMessage);
     }
   }
 }
