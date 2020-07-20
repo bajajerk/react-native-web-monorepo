@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-community/google-signin';
+import { Text } from 'react-native';
 
 export const LoginPage: React.FC = () => {
+  const [name, setName] = useState('No Name');
   useEffect(() => {
     GoogleSignin.configure({
-      webClientId: '192425991810-j47339l4hsufta7mlvlpb1352belt2tq.apps.googleusercontent.com',
-      iosClientId: '192425991810-ni34hpukc40fk4tg83b3a80ncguf9ghr.apps.googleusercontent.com',
+      webClientId: '694785323635-p5kot1gclqg89kljalkdcc3735fvkev4.apps.googleusercontent.com',
+      iosClientId: '694785323635-slpb80t6k39mumlmhaj9n58v36gldkiv.apps.googleusercontent.com',
     });
   }, []);
 
@@ -13,7 +15,7 @@ export const LoginPage: React.FC = () => {
     try {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
-      console.log('Amit', userInfo);
+      setName(userInfo.user.email);
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         // user cancelled the login flow
@@ -28,11 +30,14 @@ export const LoginPage: React.FC = () => {
   };
 
   return (
-    <GoogleSigninButton
-      style={{ width: 192, height: 48 }}
-      size={GoogleSigninButton.Size.Wide}
-      color={GoogleSigninButton.Color.Dark}
-      onPress={signIn}
-    />
+    <>
+      <GoogleSigninButton
+        style={{ width: 192, height: 48 }}
+        size={GoogleSigninButton.Size.Wide}
+        color={GoogleSigninButton.Color.Dark}
+        onPress={signIn}
+      />
+      <Text>{name}</Text>
+    </>
   );
 };
